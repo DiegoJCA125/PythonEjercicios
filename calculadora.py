@@ -17,7 +17,7 @@ def calculadora():
     print("Operaciones +, -, *, / ")
 
     while True:
-        print("Que calculo requiere?")
+        print("¿Que calculo requiere?")
         print("1. Realizar calculos")
         print("2. Salir")
 
