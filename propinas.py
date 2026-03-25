@@ -10,11 +10,18 @@ while True:
         total_propina = total + propina
         por_persona = total_propina / personas
 
-        print (f"La propina corresponde a: {propina}\n")
+        print(f"La propina corresponde a: {propina}\n")
         print(f"Total con propina es: {total_propina}\n")
         print(f"Cada persona debe pagar: {por_persona}\n")
+
+        opcion = input ("Desea volver a calcular? (1. Si / 2. No \n)")
+        if opcion == "2":
+            print("Hasta luego")
+            break
 
     except ValueError:
         print("Ingresa valores numericos")
         continue
 
+
+  
