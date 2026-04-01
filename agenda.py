@@ -14,11 +14,11 @@ while True:
         agenda_numero = int(input("Numero del contacto \n"))
         agenda.append({"nombre": agenda_nombre, "numero": agenda_numero})
         print(f"Se agrego el contacto: {agenda_nombre} - {agenda_numero}\n")
-
+    #Deja ver los contactos guardados
     elif opcion == "2":
         for numero, contacto in enumerate(agenda, 1):
             print(f"{numero}. {contacto['nombre']} - {contacto['numero']} \n")
-
+    #Busca el contacto
     elif opcion == "3":
         buscar = input("Nombre a buscar: \n")
         for contacto in agenda:
@@ -27,7 +27,7 @@ while True:
                 encontrado = True
             if not encontrado:
                 print("No se encontro el contacto")    
-
+    #Elimina el contacto 
     elif opcion == "4":
         if len(agenda) == 0:
             print("No hay contactos para eliminar")
