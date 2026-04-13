@@ -31,7 +31,6 @@ cursor.execute("""
 
 conexion.commit()
 print("Tablas creadas correctamente")
-conexion.close()
 
 import sqlite3
 import os
@@ -79,5 +78,50 @@ cursor.executemany("""
 
 conexion.commit()
 print("Datos insertados correctamente")
-conexion.close()
 
+#INNER JOIN - solo jugadores que tienen equipos asginados
+#Une las tablas donde equipo_id coindice con el id delequipo
+
+cursor.execute("""
+    SELECT jugadores.nombre, jugadores.posicion, equipos.nombre, equipos.ciudad
+    FROM jugadores
+    INNER JOIN equipos ON jugadores.equipo_id = equipos.id
+""")
+# ON - indica por que columna se unen las tablas
+# jugadores.equipo_id = equipos.id es la columna en comun
+
+inner = cursor.fetchall()
+print("INNER JOIN - jugadores con equipo:")
+for fila in inner:
+    print(f"{fila[0]} | {fila[1]} | {fila[2]} | {fila[3]}")
+print("---------------------------")
+
+#LEFT JOIN - todos los jugadores aunque no tengan equipo
+cursor.execute("""
+    SELECT jugadores.nombre, jugadores.posicion, equipos.nombre
+    FROM jugadores
+    LEFT JOIN equipos ON jugadores.equipo_id = equipos.id
+""")
+#LEFT JOIN - trae todos la tabla izquierdo (jugadores)
+#Si no tienen equipo, muestra el NULL en las columnas de equipo
+left = cursor.fetchall()
+print("LEFT JOIN - todos los jugadores:")
+for fila in left:
+    print(f"{fila[0]} | {fila[1]} | {fila[2]}")
+print("----------------------")
+
+#JOIN con WHERE - jugadores del real madrid
+cursor.execute("""
+    SELECT jugadores.nombre, jugadores.edad, equipos.estadio
+    FROM jugadores
+    INNER JOIN equipos ON jugadores.equipo_id = equipos.id
+    WHERE equipos.nombre = 'Real Madrid'
+""")
+#Combinamos JOIN con WHERE para filtrar los reusltados
+
+real_madrid = cursor.fetchall()
+print("Jugadores del Real Madrid:")
+for fila in real_madrid:
+    print(f"{fila[0]} | Edad: {fila[1]} | Estadio: {fila[2]}")
+
+conexion.close()
