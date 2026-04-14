@@ -1,0 +1,8 @@
+id,fecha,cliente,ciudad,producto,categoria,precio,cantidad
+1,2024-01-01,Juan,Bogota,Mouse,Tech,50,2
+2,2024-01-02,Ana,Medellin,Teclado,Tech,80,1
+3,2024-01-03,Pedro,Cali,Monitor,Tech,300,1
+4,2024-01-04,Luisa,Bogota,Silla,Hogar,150,2
+5,2024-01-05,Carlos,Bogota,Mouse,Tech,50,3
+6,2024-01-06,Sofia,Cali,Teclado,Tech,80,2
+7,2024-01-07,Andres,Medellin,Monitor,Tech,300,1
