@@ -1,0 +1,13 @@
+id,fecha,cliente,ciudad,producto,precio,cantidad
+5,2024-02-01,Juan,Bogota,Mouse,50,1
+6,2024-02-02,Ana,Medellin,Monitor,300,1
+7,2024-02-03,Pedro,Cali,Teclado,80,2
+8,2024-02-04,Luisa,Cali,Monitor,300,1
+17,2024-02-05,Carlos,Bogota,Teclado,80,3
+18,2024-02-06,Sofia,Cali,Mouse,50,2
+19,2024-02-07,Pedro,Medellin,Monitor,300,1
+20,2024-02-08,Juan,Bogota,Monitor,300,1
+21,2024-02-09,Ana,Medellin,Teclado,80,2
+22,2024-02-10,Luisa,Cali,Mouse,50,5
+23,2024-02-11,Carlos,Bogota,Monitor,300,1
+24,2024-02-12,Sofia,Cali,Teclado,80,1

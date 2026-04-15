@@ -43,22 +43,28 @@ def transform(df):
         return df
     
     df = df.dropna()
+    #CONVIERTE LA FECHA
     df["fecha"] = pd.to_datetime(df["fecha"])
-    df["total"] = df["precio"] * df["cantidad"]
+    # CREAR COLUMNA MES
+    df["mes"] = df["fecha"].dt.month_name(locale="es_ES") #COLOCARA EL MES EN ESPA?OL
+    df["total"] = df["precio"] * df["cantidad"] # TOTAL
     df = df[df["categoria"] == "Tech"]
 
-    df_grouped = df.groupby("ciudad").agg({
+    df_grouped = df.groupby(["mes", "ciudad"]).agg({
         "total": "sum",
         "cantidad": "sum"
     })
-
+    #PROMEDIO
     df_grouped["promedio"] = df_grouped["total"] / df_grouped["cantidad"]
     df_grouped["promedio"] = df_grouped["promedio"].round(2)
 
+    #FILTRO DE NEGOCIO
     df_grouped = df_grouped[df_grouped["total"] >200]
+    #ORDENAR
     df_grouped = df_grouped.sort_values(by="total", ascending=False)
-    df_grouped = df_grouped.head(2)
-
+    # AGRUPAR POR MES Y TOMAR EL MAYOR
+    df_grouped = df_grouped.groupby("mes").head(1)
+    # RCUPERA LA COLUMNA
     df_grouped = df_grouped.reset_index()
 
     return df_grouped
@@ -69,7 +75,7 @@ def load(df, output_path):
         print("No se guarda archivo porque esta vacio")
         return
     df.to_csv(output_path, index=False)
-    print(f"Archivo guardado en: {output_path}")
+    print(f"\nArchivo guardado en: {output_path} \n")
 
 def run_pipeline():
     base_dir = os.path.dirname(__file__)

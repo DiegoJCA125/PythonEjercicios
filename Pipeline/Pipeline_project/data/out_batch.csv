@@ -1,3 +1,3 @@
-ciudad,total,cantidad,promedio
-Cali,1120,10,112.0
-Medellin,760,4,190.0
+mes,ciudad,total,cantidad,promedio
+Enero,Cali,760,4,190.0
+Marzo,Medellin,300,1,300.0
