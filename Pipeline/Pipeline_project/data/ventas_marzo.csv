@@ -1,0 +1,4 @@
+id,fecha,cliente,ciudad,producto,categoria,precio,cantidad
+7,2024-03-01,Andres,Medellin,Monitor,Tech,300,1
+8,2024-03-02,Laura,Cali,Mouse,Tech,50,4
+9,2024-03-03,Diego,Bogota,Teclado,Tech,80,2

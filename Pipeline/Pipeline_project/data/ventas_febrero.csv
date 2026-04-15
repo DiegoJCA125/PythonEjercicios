@@ -1,0 +1,4 @@
+id,fecha,cliente,ciudad,producto,categoria,precio,cantidad
+4,2024-02-01,Luisa,Bogota,Silla,Hogar,150,2
+5,2024-02-02,Carlos,Bogota,Mouse,Tech,50,3
+6,2024-02-03,Sofia,Cali,Teclado,Tech,80,2
