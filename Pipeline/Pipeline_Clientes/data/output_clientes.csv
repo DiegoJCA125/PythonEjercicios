@@ -1,0 +1,4 @@
+cliente,ciudad,total,cantidad,num_compras,ticket_promedio,segmento
+Carlos,Bogota,1040,9,4,260.0,VIP
+Luisa,Cali,1000,10,4,250.0,VIP
+Sofia,Cali,640,6,4,160.0,Medio
