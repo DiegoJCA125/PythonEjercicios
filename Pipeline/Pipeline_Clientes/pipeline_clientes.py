@@ -50,8 +50,8 @@ def transform(df):
     # ORDENAR ( MEJORES CLIENTES)
     df_grouped = df_grouped.sort_values(by="total", ascending=False)
 
-    # TOP 3 CLIENTES
-    df_grouped = df_grouped.head(3)
+    # TOP CLIENTE POR CIUDAD
+    df_grouped = df_grouped.groupby("ciudad").head(1)
 
     # RECUPERAR COLUMNA
     df_grouped = df_grouped.reset_index()
