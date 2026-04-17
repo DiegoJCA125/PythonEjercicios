@@ -1,4 +1,9 @@
-cliente,ciudad,total,cantidad,num_compras,ticket_promedio,segmento
-Carlos,Bogota,1040,9,4,260.0,VIP
-Luisa,Cali,1000,10,4,250.0,VIP
-Sofia,Cali,640,6,4,160.0,Medio
+cliente,ciudad,total,cantidad,num_compras,ticket_promedio,rank,total_ciudad,participacion,segmento
+Carlos,Bogota,1040,9,4,260.0,1,1570,66.24%,VIP
+Juan,Bogota,530,5,4,132.5,2,1570,33.76%,Medio
+Luisa,Cali,1000,10,4,250.0,1,2100,47.62%,VIP
+Sofia,Cali,640,6,4,160.0,2,2100,30.48%,Medio
+Juan,Cali,300,1,1,300.0,3,2100,14.29%,Bajo
+Pedro,Cali,160,2,1,160.0,4,2100,7.62%,Bajo
+Ana,Medellin,640,6,4,160.0,1,990,64.65%,Medio
+Pedro,Medellin,350,2,2,175.0,2,990,35.35%,Bajo

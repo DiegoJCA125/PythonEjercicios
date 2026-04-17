@@ -1,0 +1,11 @@
+-- ============================================
+-- Proyecto: Pipeline Clientes
+-- Autor: Juan Diego
+-- Descripción:
+-- Análisis de clientes por ciudad con:
+-- - total ventas
+-- - ticket promedio
+-- - ranking por ciudad
+-- - participación (%)
+-- - segmentación
+

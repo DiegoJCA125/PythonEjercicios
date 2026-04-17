@@ -47,11 +47,22 @@ def transform(df):
     df_grouped["ticket_promedio"] = df_grouped["total"] / df_grouped["num_compras"]
     df_grouped["ticket_promedio"] = df_grouped["ticket_promedio"].round(2)
 
+    #RANKING PRIMERO (SOBRE TODOS LOS DATOS)
+    df_grouped["rank"] = df_grouped.groupby("ciudad")["total"].rank(method="first", ascending=False)
+
     # ORDENAR ( MEJORES CLIENTES)
-    df_grouped = df_grouped.sort_values(by="total", ascending=False)
+    df_grouped = df_grouped.sort_values(by=["ciudad", "rank"])
 
     # TOP CLIENTE POR CIUDAD
-    df_grouped = df_grouped.groupby("ciudad").head(1)
+    df_grouped["rank"] = df_grouped["rank"].astype(int)
+
+    #TOTAL POR CIUDAD
+    df_grouped["total_ciudad"] = df_grouped.groupby("ciudad")["total"].transform("sum")
+
+    # PORCENTAJE DE PARTICIPACION
+    df_grouped["participacion"] = (df_grouped["total"] / df_grouped["total_ciudad"]) *100
+    df_grouped["participacion"] = df_grouped["participacion"].round(2)
+    df_grouped["participacion_label"] = df_grouped["participacion"].astype(str) + "%"
 
     # RECUPERAR COLUMNA
     df_grouped = df_grouped.reset_index()
