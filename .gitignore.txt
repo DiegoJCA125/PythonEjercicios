@@ -1,0 +1,3 @@
+output_clientes.csv
+__pycache__/
+*.pyc
