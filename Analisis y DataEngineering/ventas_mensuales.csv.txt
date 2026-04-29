@@ -1,0 +1,6 @@
+fecha,producto,unidades,precio_unitario
+2023-10-01,Monitor,5,250
+2023-10-02,Teclado,10,80
+2023-10-02,Mouse,0,25
+2023-10-03,Laptop,3,1200
+2023-10-04,Monitor,2,250
