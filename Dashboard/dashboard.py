@@ -108,6 +108,11 @@ st.subheader("🔍 Filtrar por Cliente")
 #st.selectbox() - Crea un menu desplegable interactivo
 cliente_seleccionado = st.selectbox(
     "SElecciona un cliente:",
-    ventas_completas["cliente".unique]
+    ventas_completas["cliente"].unique()
     #unique, devuelve los valores unicos de la columna
 )
+
+#FILTRA LA TABLA SEGUN EL CLIENTE SELECCIONADO
+filtrado = ventas_completas[ventas_completas["cliente"] == cliente_seleccionado]
+st.dataframe(filtrado[["producto", "cantidad", "precio", "total", "fecha"]])
+st.metric("Total comprado por cliente", f"${filtrado['total'].sum():,}")
